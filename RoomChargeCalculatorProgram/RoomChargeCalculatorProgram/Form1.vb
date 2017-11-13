@@ -8,36 +8,37 @@
     End Sub
     Private Sub btnCalculateCharges_Click(sender As Object, e As EventArgs) Handles btnCalculateCharges.Click
         ' Declare variables for the calculations.
-        Dim decRoomCharges As Decimal                   ' Room chasrges total
-        Dim decAddCharges As Decimal                    ' Additional charges
-        Dim decSubtotal As Decimal                      ' Subtotal
-        Dim decTax As Decimal                           ' Tax
-        Dim decTotal As Decimal                         ' Total of all charges
-        Const decTAX_RATE As Decimal = 0.08D            ' Tax Rate
+        Dim RoomCharges As Double                  ' Room charges total
+        Dim AddCharges As Double                   ' Additional charges
+        Dim Subtotal As Double                     ' Subtotal
+        Dim Tax As Double                          ' Tax
+        Dim Total As Double                        ' Total of all charges
+        Const TAX_RATE As Double = 0.08D           ' Tax Rate
 
         Try
             ' Calculate and display the room charges.
-            decRoomCharges = CDec(txtNights.Text) *
-                CDec(txtNightlyCharge.Text)
-            lblRoomChargesResult.Text = decRoomCharges.ToString("c")
+            RoomCharges = CDbl(txtNights.Text) * CDbl(txtNightlyCharge.Text)
+            lblRoomChargesResult.Text = RoomCharges.ToString("c")
 
             ' Calculate and display the additional charges.
-            decAddCharges = CDec(txtRoomService.Text) +
-                CDec(txtTelephone.Text) +
-                CDec(lblMisc.Text)
-            lblAdditionalChargesResult.Text = decAddCharges.ToString("c")
+            AddCharges = CDbl(txtRoomService.Text) + CDbl(txtTelephone.Text) + CDbl(lblMisc.Text)
+            lblAdditionalChargesResult.Text = AddCharges.ToString("c")
 
             ' Calculate and display the Subtatol.
-            decSubtotal = decRoomCharges + decAddCharges
-            lblSubtotalResult.Text = decSubtotal.ToString("c")
+            Subtotal = RoomCharges + AddCharges
+            lblSubtotalResult.Text = Subtotal.ToString("c")
 
             ' Calculate and display the tax.
-            decTax = decSubtotal * decTAX_RATE
-            lblTaxResult.Text = decTax.ToString("c")
+            Tax = Subtotal * TAX_RATE
+            lblTaxResult.Text = Tax.ToString("c")
 
             ' Calculate and display the total charges.
-            decTotal = decSubtotal + decTax
-            lblTotalChargesResult.Text = decTotal.ToString("c")
+            Total = Subtotal + Tax
+            lblTotalChargesResult.Text = Total.ToString("c")
+
+            ' Change the colors for the total charges.
+            lblTotalChargesResult.BackColor = Color.Blue
+            lblTotalChargesResult.ForeColor = Color.White
         Catch
             ' Error Message 
             MessageBox.Show("All input must be valid numeric values.")
@@ -66,6 +67,10 @@
 
         ' Get the current time from the operating system and display it.
         lblCurrentTime.Text = Now.ToString("T")
+
+        ' Reset the lblTotalChargesResult control's colors.
+        lblTotalChargesResult.BackColor = SystemColors.Control
+        lblTotalChargesResult.ForeColor = SystemColors.ControlText
 
         ' Reset the focus to the first field.
         txtNights.Focus()
