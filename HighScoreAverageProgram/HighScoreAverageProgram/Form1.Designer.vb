@@ -35,6 +35,8 @@ Partial Class Form1
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.lblMessage = New System.Windows.Forms.Label()
+        Me.lblGrade = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,7 +106,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(43, 289)
+        Me.Label4.Location = New System.Drawing.Point(46, 246)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 13)
         Me.Label4.TabIndex = 1
@@ -113,7 +115,7 @@ Partial Class Form1
         'lblResult
         '
         Me.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblResult.Location = New System.Drawing.Point(166, 288)
+        Me.lblResult.Location = New System.Drawing.Point(166, 245)
         Me.lblResult.Name = "lblResult"
         Me.lblResult.Size = New System.Drawing.Size(100, 22)
         Me.lblResult.TabIndex = 2
@@ -148,16 +150,35 @@ Partial Class Form1
         'lblMessage
         '
         Me.lblMessage.AutoSize = True
-        Me.lblMessage.Location = New System.Drawing.Point(94, 239)
+        Me.lblMessage.Location = New System.Drawing.Point(96, 313)
         Me.lblMessage.Name = "lblMessage"
         Me.lblMessage.Size = New System.Drawing.Size(0, 13)
         Me.lblMessage.TabIndex = 6
+        '
+        'lblGrade
+        '
+        Me.lblGrade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblGrade.Location = New System.Drawing.Point(166, 281)
+        Me.lblGrade.Name = "lblGrade"
+        Me.lblGrade.Size = New System.Drawing.Size(100, 22)
+        Me.lblGrade.TabIndex = 7
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(54, 282)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(42, 13)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Grade: "
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(383, 421)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblGrade)
         Me.Controls.Add(Me.lblMessage)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnClear)
@@ -186,5 +207,7 @@ Partial Class Form1
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents lblMessage As System.Windows.Forms.Label
+    Friend WithEvents lblGrade As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class
